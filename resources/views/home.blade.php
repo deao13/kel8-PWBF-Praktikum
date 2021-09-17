@@ -7,8 +7,8 @@
     <title>ASSALAMUALIAKUM</title>
 </head>
 <body>
-    <h1>HALO SEMUANYA</h1>
-    <h2>KITA DARI</h2>
-    <p>KELOMPOK 8</p>
+    <h1>سْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1>
+    <h2>HALO SEMUANYA</h2>
+    <p>KAMI DARI KELOMPOK 8</p>
 </body>
 </html>
