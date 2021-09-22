@@ -14,12 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home' ,[
+        "title" => "home",
+    ]);
 
 });
 
 Route::get('/about', function () {
     return view('about' , [
+        "title" => "about",
         "definisi" => " ASIPS (Aplikasi Surveilans & informasi Pencegahan Stunting) adalah aplikasi tepat guna yang 
         dapat menghubungkan antara kader posyandu dengan pihak puskesmas dan orang tua dalam 
         pencatatan status gizi balita sebagai upaya pencegahan stunting. 
@@ -32,16 +35,64 @@ Route::get('/about', function () {
 });
 
 Route::get('/news', function () {
-    return view('news');
+    
+    return view('news' , [
+        "title" => "news",
+        "news" => $blog_asips
+    ]);
 
 });
+
+
 
 Route::get('/login', function () {
-    return view('login');
+    return view('login' , [
+        "title" => "login",
+    ]);
 
+});
+
+//halaman single blog_asips
+Route::get('news/{slug}' , function($slug){
+    $blog_asips = [
+        [
+            "title" => "ASIPS Week Satu" ,
+            "slug" => "asips week satu" ,
+            "author" => "Dea dan Nadya" ,
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Inventore praesentium maiores neque porro? A facere perferendis repudiandae
+            obcaecati molestiae mollitia. Fugit, esse dolorem eius asperiores libero molestiae
+            praesentium necessitatibus provident."
+        ] ,
+        [
+            "title" => "ASIPS Week Dua" ,
+            "slug" => "asips week 2" ,
+            "author" => "Pascal dan Billy" ,
+            "body" => "Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Earum iusto consequatur fugiat delectus? Error eum eligendi temporibus
+            provident vel iure, impedit neque alias illum est ut necessitatibus? 
+            Maxime modi impedit dignissimos labore cum tenetur eum, distinctio molestias perspiciatis, 
+            blanditiis hic totam nam quibusdam. Praesentium sapiente, quae quis nesciunt odit aperiam 
+            exercitationem laborum voluptates autem officia incidunt modi. 
+            Consectetur provident placeat ducimus officiis voluptas error dicta voluptate mollitia nesciunt minima, 
+            veniam, laboriosam eos vero obcaecati omnis laborum tempora debitis sed ullam!"
+        ] 
+    ];
+
+
+
+$new_asips = [];
+    foreach($blog_asips as $asips){
+        if($asips["slug"] === $slug){
+            $new_asips = $asips;
+        }
+    }
+    return view('blog_asips', [
+        "title" => "single blog asips" ,
+        "asips" => $new_asips
+    ]);
 });
 
 
 
 
-Route::get('ASIPSController', 'App\Http\Controllers\ASIPSController@index');
