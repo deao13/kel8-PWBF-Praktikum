@@ -21,8 +21,6 @@
     </div>
     
 
-    
-    <script src="js/script.js"></script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

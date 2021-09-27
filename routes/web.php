@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home' ,[
-        "title" => "home",
+        "title" => "Home",
     ]);
 
 });
 
 Route::get('/about', function () {
     return view('about' , [
-        "title" => "about",
+        "title" => "About",
         "definisi" => " ASIPS (Aplikasi Surveilans & informasi Pencegahan Stunting) adalah aplikasi tepat guna yang 
         dapat menghubungkan antara kader posyandu dengan pihak puskesmas dan orang tua dalam 
         pencatatan status gizi balita sebagai upaya pencegahan stunting. 
@@ -37,8 +37,22 @@ Route::get('/about', function () {
 Route::get('/news', function () {
     
     return view('news' , [
-        "title" => "news",
-        "news" => $blog_asips
+        "title" => "News",
+        "news" => [
+            [
+                "author" => "DeaO",
+                "title" => "Sepak Bola Wanita",
+                "slug" => "sepak-bola-wanita",
+                "body" => "Lorem ipsum dolores auvet...."
+            ],
+            [
+                "author" => "Nad",
+                "title" => "Basket Putri",
+                "slug" => "basket-putri",
+                "body" => "Lorem ipsum dolores auvet...."
+            ]
+        ]
+       
     ]);
 
 });

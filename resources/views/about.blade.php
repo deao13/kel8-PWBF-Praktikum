@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1>Halaman About</h1>
+    <h1>{{ $title }}</h1>
     <p>{{ $definisi }}</p>
 @endsection
    
