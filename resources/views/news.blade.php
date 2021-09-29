@@ -1,10 +1,10 @@
-@dd($asips);
+@dd($news);
 
 @extends('layouts.main')
 
 @section('container')
   
-@foreach ($news as $blog_asips)
+@foreach ($blog_asips as $news)
 <article class="mb-5">
     <h2>
         <a href="/news/{{ $blog_asips["slug"] }}" >{{ $blog_asips ["title"] }}</a>

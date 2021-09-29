@@ -40,7 +40,7 @@ Route::get('/news', function () {
         "title" => "news",
         "news" => $blog_asips
     ]);
-
+  
 });
 
 
