@@ -1,7 +1,7 @@
 @extends('layouts.main')
 <script src="js/script.js"></script>
 @section('container')
-  <h1>HALAMAN HOME</h1>
+  <h1>Halaman Home</h1>
 @endsection        
    
   
