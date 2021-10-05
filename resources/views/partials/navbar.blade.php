@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link {{ ($title === "Home") ? 'active' : '' }}"  href="/home">Home</a>
+          <a class="nav-link {{ ($title === "Home") ? 'active' : '' }}"  href="/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ ($title === "Login") ? 'active' : '' }}" href="/register">Login</a>
