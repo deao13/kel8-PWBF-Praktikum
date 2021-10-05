@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+
+Route::get('/home', function () {
     return view('home' ,[
         "title" => "Home",
     ]);
 
 });
+
 
 Route::get('/about', function () {
     return view('about' , [
@@ -41,14 +43,14 @@ Route::get('/news', function () {
         "news" => [
             [
                 "author" => "DeaO",
-                "title" => "Sepak Bola Wanita",
-                "slug" => "sepak-bola-wanita",
+                "title" => "ASIPS Week 1",
+                "slug" => "asips-week-1",
                 "body" => "Lorem ipsum dolores auvet...."
             ],
             [
                 "author" => "Nad",
-                "title" => "Basket Putri",
-                "slug" => "basket-putri",
+                "title" => "ASIPS Week 2",
+                "slug" => "asips-week-2",
                 "body" => "Lorem ipsum dolores auvet...."
             ]
         ]
@@ -59,14 +61,16 @@ Route::get('/news', function () {
 
 
 
-Route::get('/login', function () {
-    return view('login' , [
-        "title" => "login",
+Route::get('/', function () {
+    return view('register' , [
+        "title" => "Login",
     ]);
 
 });
 
-//halaman single blog_asips
+
+
+// halaman single blog_asips
 Route::get('news/{slug}' , function($slug){
     $blog_asips = [
         [
