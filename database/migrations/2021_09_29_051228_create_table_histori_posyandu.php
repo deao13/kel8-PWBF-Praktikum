@@ -15,12 +15,21 @@ class CreateTableHistoriPosyandu extends Migration
     {
         Schema::create('table_histori_posyandu', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_histori');
             $table->date('tgl_posyandu');
             $table->float('bb_balita');
             $table->float('tb_balita');
             $table->timestamps();
+
+            
+            // $table->integer('id_balita')->unsigned();
+            // $table->foreign('id_balita')->references('id')->on('table_balita');
         });
+
+        Schema::table('table_histori_posyandu', function (Blueprint $table) {
+            $table->foreignId('id_balita')->constrained('table_balita');
+            // $table->foreignId('id_pengurus')->constrained('pengurus');
+        });
+
     }
 
     /**

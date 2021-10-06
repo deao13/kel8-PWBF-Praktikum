@@ -15,10 +15,16 @@ class CreateTableKelurahan extends Migration
     {
         Schema::create('table_kelurahan', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_kelurahan');
             $table->string('kelurahan');
             $table->timestamps();
         });
+
+            Schema::table('table_kelurahan', function (Blueprint $table) {
+                $table->foreignId('id_kecamatan')->constrained('table_kecamatan');
+            });
+    
+
+    
     }
 
     /**

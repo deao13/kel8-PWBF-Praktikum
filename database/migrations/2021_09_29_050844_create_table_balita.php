@@ -15,7 +15,6 @@ class CreateTableBalita extends Migration
     {
         Schema::create('table_balita', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_balita');
             $table->string('nama_balita',50);
             $table->integer('nik_ortu');
             $table->string('nama_ortu',50);
@@ -23,7 +22,16 @@ class CreateTableBalita extends Migration
             $table->string('jk_balita',1);
             $table->smallInteger('status');
             $table->timestamps();
+
+            // $table->integer('id_posyandu')->unsigned();
+            // $table->foreign('id_posyandu')->references('id')->on('table_posyandu');
         });
+
+        Schema::table('table_balita', function (Blueprint $table) {
+            $table->foreignId('id_posyandu')->constrained('table_posyandu');
+            // $table->foreignId('id_pengurus')->constrained('pengurus');
+        });
+
     }
 
     /**

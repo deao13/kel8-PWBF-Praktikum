@@ -15,9 +15,22 @@ class CreateTableUserRole extends Migration
     {
         Schema::create('table_user_role', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_user_role');
             $table->timestamps();
+
+            // $table->integer('id_user')->unsigned();
+            // $table->foreign('id_user')->references('id')->on('table_user');
+
+            
+            // $table->integer('id_role')->unsigned();
+            // $table->foreign('id_role')->references('id')->on('table_role');
         });
+
+        Schema::table('table_user_role', function (Blueprint $table) {
+            $table->foreignId('id_user')->constrained('table_user');
+            $table->foreignId('id_role')->constrained('table_role');
+        });
+        
+
     }
 
     /**

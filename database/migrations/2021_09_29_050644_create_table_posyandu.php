@@ -15,11 +15,19 @@ class CreateTablePosyandu extends Migration
     {
         Schema::create('table_posyandu', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_posyandu');
             $table->string('nama_posyandu',20);
             $table->string('alamat_posyandu',50);
             $table->timestamps();
+
+            // $table->integer('id_kelurahan')->unsigned();
+            // $table->foregin('id_kelurahan')->references('id')->on('table_kelurahan');
         });
+        Schema::table('table_posyandu', function (Blueprint $table) {
+            $table->foreignId('id_kelurahan')->constrained('table_kelurahan');
+            // $table->foreignId('id_pengurus')->constrained('pengurus');
+        });
+
+    
     }
 
     /**
