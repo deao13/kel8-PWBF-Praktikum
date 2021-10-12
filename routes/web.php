@@ -61,13 +61,13 @@ Route::get('/news', function () {
                 "author" => "DeaO",
                 "title" => "ASIPS Week 1",
                 "slug" => "asips-week-1",
-                "body" => "Lorem ipsum dolores auvet...."
+                "body" => "Mengutip dari Buletin Stunting yang dikeluarkan oleh Kementerian Kesehatan RI..",
             ],
             [
-                "author" => "Nad",
+                "author" => "Nadya",
                 "title" => "ASIPS Week 2",
                 "slug" => "asips-week-2",
-                "body" => "Lorem ipsum dolores auvet...."
+                "body" => "Mengutip dari Buletin Stunting yang dikeluarkan oleh Kementerian Kesehatan RI.."
             ]
         ]
        
@@ -83,23 +83,17 @@ Route::get('news/{slug}' , function($slug){
             "title" => "ASIPS Week Satu" ,
             "slug" => "asips week satu" ,
             "author" => "Dea dan Nadya" ,
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Inventore praesentium maiores neque porro? A facere perferendis repudiandae
-            obcaecati molestiae mollitia. Fugit, esse dolorem eius asperiores libero molestiae
-            praesentium necessitatibus provident."
+            "body" => "Mengutip dari Buletin Stunting yang dikeluarkan oleh Kementerian Kesehatan RI, 
+            stunting adalah kondisi yang ditandai ketika panjang atau tinggi badan anak kurang 
+            jika dibandingkan dengan umurnya."
         ] ,
         [
             "title" => "ASIPS Week Dua" ,
             "slug" => "asips week 2" ,
             "author" => "Pascal dan Billy" ,
-            "body" => "Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-            Earum iusto consequatur fugiat delectus? Error eum eligendi temporibus
-            provident vel iure, impedit neque alias illum est ut necessitatibus? 
-            Maxime modi impedit dignissimos labore cum tenetur eum, distinctio molestias perspiciatis, 
-            blanditiis hic totam nam quibusdam. Praesentium sapiente, quae quis nesciunt odit aperiam 
-            exercitationem laborum voluptates autem officia incidunt modi. 
-            Consectetur provident placeat ducimus officiis voluptas error dicta voluptate mollitia nesciunt minima, 
-            veniam, laboriosam eos vero obcaecati omnis laborum tempora debitis sed ullam!"
+            "body" => "Mengutip dari Buletin Stunting yang dikeluarkan oleh Kementerian Kesehatan RI, 
+            stunting adalah kondisi yang ditandai ketika panjang atau tinggi badan anak kurang 
+            jika dibandingkan dengan umurnya."
         ] 
     ];
 
