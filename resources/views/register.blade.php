@@ -63,7 +63,7 @@
       </div>
       <div class='authent'>
         <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/puff.svg'>
-        <p>Authenticating...</p>
+        {{-- <p>Authenticating...</p> --}}
       </div>
      
       
