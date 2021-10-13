@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class table_user_role extends Model
 {
-    use HasFactory;
+    protected $table = "user_role_table";
+
+    public function user(){
+        return $this->belongsTo(table_user::class, 'id', 'id_user');
+    }
+
+    public function role(){
+        return $this->belongsTo(table_role::class, 'id', 'id_role');
+    }
 }

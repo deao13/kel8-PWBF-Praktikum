@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class table_role extends Model
 {
-    use HasFactory;
+    protected $table = "role";
+
+    public function user_role(){
+        return $this->hasMany(table_user_role::class, 'id_role', 'id');
+    }
 }

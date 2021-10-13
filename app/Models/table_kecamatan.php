@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class table_kecamatan extends Model
 {
-    use HasFactory;
+   protected $table = "kecamatan_table";
+
+   public function kelurahan(){
+       return $this->hasMany(table_kelurahan::class, 'id_kelurahan', 'id');
+   }
 }

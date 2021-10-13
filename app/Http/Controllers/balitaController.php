@@ -41,10 +41,10 @@ class balitaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\table_balita  $table_balita
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(table_balita $table_balita)
+    public function show($id)
     {
         //
     }
@@ -52,10 +52,10 @@ class balitaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\table_balita  $table_balita
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(table_balita $table_balita)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +64,10 @@ class balitaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\table_balita  $table_balita
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, table_balita $table_balita)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +75,10 @@ class balitaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\table_balita  $table_balita
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(table_balita $table_balita)
+    public function destroy($id)
     {
         //
     }

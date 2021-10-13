@@ -41,10 +41,10 @@ class kelurahanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\table_kelurahan  $table_kelurahan
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(table_kelurahan $table_kelurahan)
+    public function show($id)
     {
         //
     }
@@ -52,10 +52,10 @@ class kelurahanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\table_kelurahan  $table_kelurahan
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(table_kelurahan $table_kelurahan)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +64,10 @@ class kelurahanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\table_kelurahan  $table_kelurahan
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, table_kelurahan $table_kelurahan)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +75,10 @@ class kelurahanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\table_kelurahan  $table_kelurahan
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(table_kelurahan $table_kelurahan)
+    public function destroy($id)
     {
         //
     }

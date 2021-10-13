@@ -14,7 +14,7 @@ class kecamatanController extends Controller
      */
     public function index()
     {
-        //
+        $kecamatan = table_kecamatan::all();
     }
 
     /**
@@ -41,10 +41,10 @@ class kecamatanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\table_kecamatan  $table_kecamatan
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(table_kecamatan $table_kecamatan)
+    public function show($id)
     {
         //
     }
@@ -52,10 +52,10 @@ class kecamatanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\table_kecamatan  $table_kecamatan
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(table_kecamatan $table_kecamatan)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +64,10 @@ class kecamatanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\table_kecamatan  $table_kecamatan
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, table_kecamatan $table_kecamatan)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +75,10 @@ class kecamatanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\table_kecamatan  $table_kecamatan
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(table_kecamatan $table_kecamatan)
+    public function destroy($id)
     {
         //
     }
