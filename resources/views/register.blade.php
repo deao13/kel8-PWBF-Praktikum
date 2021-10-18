@@ -1,13 +1,24 @@
-{{-- @extends('layouts.main')
+@extends('layouts.main')
 
 @section('container')
-    <h1>Halaman Login</h1>
+    <form class="form-signin" action="/login" method="GET">
+        {{ csrf_field() }}
+        <h1 class="h3 mb-3 font-weight-normal">Silakan Login</h1>
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        {{-- <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        </div> --}}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; Asips 2021</p>
+    </form>
+@endsection
 
-    <h3>nama</h3>
-    <h4>nim</h4>s
-@endsection --}}
-
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <link href="css/login.css" rel="stylesheet" />
@@ -19,56 +30,11 @@
 </head>
 <body>
    
-      <div class='login'>
-        <div class='login_title'>
-          <span>APLIKASI SURVEILANS & INFORMASI PENCEGAHAN STUNTING</span>
-        </div>
-        <div class='login_fields'>
-          <div class='login_fields__user'>
-            <div class='icon'>
-              <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/user_icon_copy.png'>
-            </div>
-            <input placeholder='Username' type='text'>
-              <div class='validation'>
-                <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png'>
-              </div>
-            </input>
-          </div>
-          <div class='login_fields__password'>
-            <div class='icon'>
-              <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/lock_icon_copy.png'>
-            </div>
-            <input placeholder='Password' type='password'>
-            <div class='validation'>
-              <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png'>
-            </div>
-          </div>
-          <a href="{{ url('/Home') }}"><input type='submit' value='Log In'></a>
-          <div class='login_fields__submit'>
-            
-
-
-            <div class='forgot'>
-              <a href='#'>Lupa Password?</a>
-            </div>
-          </div>
-        </div>
-        <div class='success'>
-          <h2>Authentication Success</h2>
-          <h1>Welcome back</h1>
-        </div>
-        <div class='disclaimer'>
-          <h2>Asips 2021</h2>
-        </div>
-      </div>
-      <div class='authent'>
-        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/puff.svg'>
-        {{-- <p>Authenticating...</p> --}}
-      </div>
+      
      
       
 </body>
-</html>
+</html> --}}
 
 {{-- <!DOCTYPE html>
 <html lang="en">
