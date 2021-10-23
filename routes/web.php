@@ -24,13 +24,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home' ,[
         "title" => "Home",
+        "news" => [
+            [
+                "author" => "Dea",
+                "author_ig" => "https://www.instagram.com/deaoktavia13",
+                "title" => "ASIPS Week 1",
+                "slug" => "asips-week-1",
+                "body" => "Mengutip dari Buletin Stunting yang dikeluarkan oleh Kementerian Kesehatan RI..",
+            ],
+            [
+                "author" => "Nadya",
+                "author_ig" => "https://www.instagram.com/nadyalovita",
+                "title" => "ASIPS Week 2",
+                "slug" => "asips-week-2",
+                "body" => "Mengutip dari Buletin Stunting yang dikeluarkan oleh Kementerian Kesehatan RI.."
+            ]
+        ]
     ]);
 
 });
 
 
 Route::get('/login', function () {
-    return redirect('/news');
+    return redirect('/');
 });
 
 Route::get('/register', function () {
@@ -55,19 +71,28 @@ Route::get('/about', function () {
 
 });
 
+Route::get('/contact', function () {
+    return view('contact' , [
+        "title" => "Contact Us",
+    ]);
+
+});
+
 Route::get('/news', function () {
     
     return view('news' , [
         "title" => "News",
         "news" => [
             [
-                "author" => "DeaO",
+                "author" => "Dea",
+                "author_ig" => "https://www.instagram.com/deaoktavia13",
                 "title" => "ASIPS Week 1",
                 "slug" => "asips-week-1",
                 "body" => "Mengutip dari Buletin Stunting yang dikeluarkan oleh Kementerian Kesehatan RI..",
             ],
             [
                 "author" => "Nadya",
+                "author_ig" => "https://www.instagram.com/nadyalovita",
                 "title" => "ASIPS Week 2",
                 "slug" => "asips-week-2",
                 "body" => "Mengutip dari Buletin Stunting yang dikeluarkan oleh Kementerian Kesehatan RI.."
@@ -84,16 +109,18 @@ Route::get('news/{slug}' , function($slug){
     $blog_asips = [
         [
             "title" => "ASIPS Week Satu" ,
-            "slug" => "asips week satu" ,
-            "author" => "Dea dan Nadya" ,
+            "slug" => "asips-week-1" ,
+            "author" => "Dea" ,
+            "author_ig" => "https://www.instagram.com/deaoktavia13",
             "body" => "Mengutip dari Buletin Stunting yang dikeluarkan oleh Kementerian Kesehatan RI, 
             stunting adalah kondisi yang ditandai ketika panjang atau tinggi badan anak kurang 
             jika dibandingkan dengan umurnya."
         ] ,
         [
             "title" => "ASIPS Week Dua" ,
-            "slug" => "asips week 2" ,
-            "author" => "Pascal dan Billy" ,
+            "slug" => "asips-week-2" ,
+            "author" => "Nadya" ,
+            "author_ig" => "https://www.instagram.com/nadyalovita",
             "body" => "Mengutip dari Buletin Stunting yang dikeluarkan oleh Kementerian Kesehatan RI, 
             stunting adalah kondisi yang ditandai ketika panjang atau tinggi badan anak kurang 
             jika dibandingkan dengan umurnya."
@@ -102,15 +129,15 @@ Route::get('news/{slug}' , function($slug){
 
 
 
-$new_asips = [];
+    $news = [];
     foreach($blog_asips as $asips){
         if($asips["slug"] === $slug){
-            $new_asips = $asips;
+            $news = $asips;
         }
     }
-    return view('blog_asips', [
-        "title" => "single blog asips" ,
-        "asips" => $new_asips
+    return view('news', [
+        "title" => $news['title'] ,
+        "news" => $news
     ]);
 });
 
