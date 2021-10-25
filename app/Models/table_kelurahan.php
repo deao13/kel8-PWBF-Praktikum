@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class table_kelurahan extends Model
 {
     protected $table = "kelurahan_table";
+    protected $fillable = ['nama_kelurahan'];
 
     public function kecamatan(){
         return $this->belongsTo(table_kecamatan::class, 'id', 'id_kelurahan');

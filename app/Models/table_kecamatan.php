@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class table_kecamatan extends Model
 {
    protected $table = "kecamatan_table";
+   protected $fillable = ['nama_kecamatan'];
 
    public function kelurahan(){
        return $this->hasMany(table_kelurahan::class, 'id_kelurahan', 'id');
