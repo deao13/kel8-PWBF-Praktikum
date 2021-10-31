@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsTable extends Migration
+class CreateKelurahan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('kelurahan', function (Blueprint $table) {
             $table->id();
-            $table->string('judul', 100);
-            $table->text('deskripsi');
-            // $table->integer('id_user')->unsigned();
+            $table->string('nama');
             $table->timestamps();
         });
 
-        Schema::table('posts', function (Blueprint $table) {
-            $table->foreignId('id_user')->constrained('users');
+        Schema::table('kelurahan', function (Blueprint $table) {
+            $table->foreignId('id_kecamatan')->constrained('kecamatan');
         });
-        
+    
+
+    
     }
 
     /**
@@ -34,6 +34,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('kelurahan');
     }
 }

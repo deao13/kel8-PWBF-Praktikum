@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class table_balita extends Model
+class Balita extends Model
 {
-    protected $table = "balita_table";
+    protected $table = "balita";
     protected $fillable = ['nama_balita', 'nik_ortu', 'nama_ortu', 'tgllahir_balita', 'jk_balita', 'status'];
 
     public function posyandu(){
-        return $this->belongsTo(table_posyandu::class, 'id', 'id_posyandu');
+        return $this->belongsTo(Posyandu::class, 'id', 'id_posyandu');
     }
 
     public function histori_posyandu(){
-        return $this->hasMany(table_histori_posyandu::class, 'id_histori_posyandu', 'id');
+        return $this->hasMany(HistoriPosyandu::class, 'id_histori_posyandu', 'id');
     }
 }

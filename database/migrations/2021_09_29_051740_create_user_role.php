@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableUserRole extends Migration
+class CreateUserRole extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,19 @@ class CreateTableUserRole extends Migration
      */
     public function up()
     {
-        Schema::create('table_user_role', function (Blueprint $table) {
+        Schema::create('user_role', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 40);
             $table->timestamps();
 
             // $table->integer('id_user')->unsigned();
-            // $table->foreign('id_user')->references('id')->on('table_user');
-
-            
             // $table->integer('id_role')->unsigned();
-            // $table->foreign('id_role')->references('id')->on('table_role');
+            
         });
 
-        Schema::table('table_user_role', function (Blueprint $table) {
-            $table->foreignId('id_user')->constrained('table_user');
-            $table->foreignId('id_role')->constrained('table_role');
+        Schema::table('user_role', function (Blueprint $table) {
+            $table->foreignId('id_user')->constrained('users');
+            $table->foreignId('id_rple')->constrained('role');
         });
         
 

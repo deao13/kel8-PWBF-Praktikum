@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableHistoriPosyandu extends Migration
+class CreateHistoriPosyandu extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTableHistoriPosyandu extends Migration
      */
     public function up()
     {
-        Schema::create('table_histori_posyandu', function (Blueprint $table) {
+        Schema::create('histori_posyandu', function (Blueprint $table) {
             $table->id();
             $table->date('tgl_posyandu');
             $table->float('bb_balita');
@@ -25,8 +25,8 @@ class CreateTableHistoriPosyandu extends Migration
             // $table->foreign('id_balita')->references('id')->on('table_balita');
         });
 
-        Schema::table('table_histori_posyandu', function (Blueprint $table) {
-            $table->foreignId('id_balita')->constrained('table_balita');
+        Schema::table('histori_posyandu', function (Blueprint $table) {
+            $table->foreignId('id_balita')->constrained('balita');
             // $table->foreignId('id_pengurus')->constrained('pengurus');
         });
 
@@ -39,6 +39,6 @@ class CreateTableHistoriPosyandu extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_histori_posyandu');
+        Schema::dropIfExists('histori_posyandu');
     }
 }

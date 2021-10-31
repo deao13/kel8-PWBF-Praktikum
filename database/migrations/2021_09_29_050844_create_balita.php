@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableBalita extends Migration
+class CreateBalita extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTableBalita extends Migration
      */
     public function up()
     {
-        Schema::create('table_balita', function (Blueprint $table) {
+        Schema::create('balita', function (Blueprint $table) {
             $table->id();
             $table->string('nama_balita',50);
             $table->integer('nik_ortu');
@@ -23,12 +23,10 @@ class CreateTableBalita extends Migration
             $table->smallInteger('status');
             $table->timestamps();
 
-            // $table->integer('id_posyandu')->unsigned();
-            // $table->foreign('id_posyandu')->references('id')->on('table_posyandu');
         });
 
-        Schema::table('table_balita', function (Blueprint $table) {
-            $table->foreignId('id_posyandu')->constrained('table_posyandu');
+        Schema::table('balita', function (Blueprint $table) {
+            $table->foreignId('id_posyandu')->constrained('posyandu');
             // $table->foreignId('id_pengurus')->constrained('pengurus');
         });
 
