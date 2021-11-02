@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelurahan extends Model
 {
+    use HasFactory;
     protected $table = "kelurahan";
-    protected $fillable = ['nama'];
+    protected $fillable = [
+        'id_kecamatan', 
+        'kelurahan'
+    ];
+    public $timestamps = true;
 
     public function kecamatan(){
-        return $this->belongsTo(Kecamatan::class, 'id', 'id_kelurahan');
+        return $this->belongsTo(Kecamatan::class, 'id_kecamatan', 'id');
     }
 
     public function posyandu(){

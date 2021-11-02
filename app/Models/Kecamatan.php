@@ -7,10 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kecamatan extends Model
 {
-   protected $table = "kecamatan";
-   protected $fillable = ['nama'];
+    use HasFactory;
+    protected $table = "kecamatan";
+    protected $fillable = [
+        'kecamatan'
+    ];
+    public $timestamps = true;
 
-   public function kelurahan(){
-       return $this->hasMany(Kelurahan::class, 'id_kelurahan', 'id');
-   }
+    public function kelurahan(){
+        return $this->hasMany(Kelurahan::class, 'id_kecamatan', 'id');
+    }
 }

@@ -7,14 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Balita extends Model
 {
+    use HasFactory;
+
     protected $table = "balita";
-    protected $fillable = ['nama_balita', 'nik_ortu', 'nama_ortu', 'tgllahir_balita', 'jk_balita', 'status'];
+    protected $fillable = [
+        'id_posyandu', 
+        'nama_balita', 
+        'nik_orang_tua',
+        'nama_orang_tua',
+        'tgl_lahir_balita',
+        'jenis_kelamin_balita',
+        'status'
+    ];
+    public $timestamps = true;
 
     public function posyandu(){
-        return $this->belongsTo(Posyandu::class, 'id', 'id_posyandu');
+        return $this->belongsTo(Posyandu::class, 'id_posyandu', 'id');
     }
 
-    public function histori_posyandu(){
-        return $this->hasMany(HistoriPosyandu::class, 'id_histori_posyandu', 'id');
+    public function history_posyandu(){
+        return $this->hasMany(HistoryPosyandu::class, 'id_balita', 'id');
     }
 }

@@ -7,13 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserRole extends Model
 {
+    use HasFactory;
+
     protected $table = "user_role";
+    protected $fillable = [
+        'id_user', 
+        'id_role'
+    ];
+    public $timestamps = false;
 
     public function user(){
-        return $this->belongsTo(user::class, 'id', 'id_user');
+        return $this->belongsTo(User::class, 'id_user', 'id');
     }
 
     public function role(){
-        return $this->belongsTo(role::class, 'id', 'id_role');
+        return $this->belongsTo(Role::class, 'id_role', 'id');
     }
 }

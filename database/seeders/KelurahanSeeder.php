@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Kelurahan;
 
 class KelurahanSeeder extends Seeder
 {
@@ -13,6 +14,9 @@ class KelurahanSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Kelurahan::create([
+            'id_kecamatan' => 1,
+            'kelurahan' => 'Tambakrejo'
+        ]);
     }
 }

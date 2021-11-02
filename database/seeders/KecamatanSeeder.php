@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Kecamatan;
 
 class KecamatanSeeder extends Seeder
 {
@@ -13,6 +14,8 @@ class KecamatanSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Kecamatan::create([
+            'kecamatan' => 'Simokerto'
+        ]);
     }
 }

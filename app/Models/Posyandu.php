@@ -7,11 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Posyandu extends Model
 {
+    use HasFactory;
     protected $table = "posyandu";
-    protected $fillable = ['nama', 'alamat', 'id_kelurahan'];
+    protected $fillable = [
+        'id_kelurahan', 
+        'nama_posyandu', 
+        'alamat_posyandu'
+    ];
+    public $timestamps = true;
 
     public function kelurahan(){
-        return $this->belongsTo(Kelurahan::class, 'id', 'id_kelurahan');
+        return $this->belongsTo(Kelurahan::class, 'id_kelurahan', 'id');
     }
 
     public function balita(){
