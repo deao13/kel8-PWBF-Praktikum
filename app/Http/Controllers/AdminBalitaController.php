@@ -17,15 +17,29 @@ class AdminBalitaController extends Controller
      */
     public function index()
     {
+
         $authUser = session('user');
         $authRole = session('role');
 
         if($authUser && ($authRole->role === 'Super Admin'|| $authRole->role === 'Admin')) {  
             $balita = Balita::with('posyandu')->get();
             return view('admin.balita', ['balita' => $balita]);
-        } else {
+        } else { 
             return redirect()->action([AdminAuthController::class, 'index']);
         }
+
+        $balita = Balita::latest();
+
+        if(request('search')){
+            $balita->where('Nama Orang Tua', 'like', '%' . request('search') . '%');
+        };
+
+        return view('admin.balita', [
+            "title" => "All Balita",
+            "active" => 'balita',
+            "balita" => Balita::latest()->get()
+        ]);
+
     }
 
     /**

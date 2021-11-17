@@ -4,7 +4,19 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Kelurahan</h1>
+
+        <div class="row">
+            <div class="col-md-10">
+                <form action="/kelurahan">
+                    <div class="input-group mb-6">
+                        <input type="text" class="form-control" placeholder=" " name="search">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                      </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <!-- Main Content-->
     <div class="row">
         <div class="col-md-12">
