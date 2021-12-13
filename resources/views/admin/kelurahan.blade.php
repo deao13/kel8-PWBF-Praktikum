@@ -4,27 +4,23 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Kelurahan</h1>
-
-        <div class="row">
-            <div class="col-md-10">
-                <form action="/kelurahan">
-                    <div class="input-group mb-6">
-                        <input type="text" class="form-control" placeholder=" " name="search">
-                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
-                      </div>
-                </div>
-            </div>
-        </div>
     </div>
-
     <!-- Main Content-->
     <div class="row">
         <div class="col-md-12">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <a type="button" class="btn btn-success btn-md" href="/admin/kelurahan/create">
-                        <i class="fas fa-plus"></i>
-                    </a>
+                    <div class="d-flex justify-content-between">
+                        <a type="button" class="btn btn-success btn-md" href="/admin/kelurahan/create">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                        <div class="input-group" style="margin-left: 15px;">
+                            <form method="GET" action="/admin/kelurahan" class="d-flex align-items-end">
+                                <input type="text" class="form-control" placeholder=" " name="search" style="margin-right: 3px;">
+                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -40,7 +36,7 @@
                             <tbody>
                             @foreach ($kelurahan as $data)
                                 <tr>
-                                    <td class="text-right">{{ $loop->index + 1 }}</td>
+                                    <td class="text-right">{{ $data->id }}</td>
                                     <td>{{ $data->kelurahan }}</td>
                                     <td>{{ $data->kecamatan->kecamatan }}</td>
                                     <td class="text-center">
@@ -61,6 +57,12 @@
                             @endforeach
                             </tbody>
                         </table>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    {{-- Pagination --}}
+                    <div class="d-flex justify-content-center">
+                        {!! $kelurahan->links("pagination::bootstrap-4") !!}
                     </div>
                 </div>
             </div>

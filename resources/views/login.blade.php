@@ -19,7 +19,7 @@
             <form class="form-signin" action="/login" method="POST">
                 @csrf
                 <label class="sr-only">Username</label>
-                <input type="text" id="inputEmail" class="form-control" name="username" placeholder="NIK Orang Tua" required autofocus>
+                <input type="text" id="inputEmail" class="form-control" name="username" placeholder="Username" required autofocus>
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Masuk</button>
