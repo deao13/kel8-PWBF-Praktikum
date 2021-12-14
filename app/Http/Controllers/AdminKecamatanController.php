@@ -19,7 +19,7 @@ class AdminKecamatanController extends Controller
         $authRole = session('role');
 
         if ($authUser && $authRole->role === 'Super Admin') {
-            if ($request->input('search') !== "") {
+            if ($request->input('search') !== null && $request->input('search') !== "") {
                 $kecamatan = Kecamatan::where('kecamatan', 'like', '%' . $request->input('search') . '%')->paginate(5);
             } else {
                 $kecamatan = Kecamatan::paginate(5);
