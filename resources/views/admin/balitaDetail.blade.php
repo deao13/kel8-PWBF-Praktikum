@@ -117,7 +117,7 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="image" class="form-label"><b>Foto KK</b></label>
+                            <label for="image" class="form-label"><b>Foto balita</b></label>
                             <input type="file" style="padding: 3px;width: 30%;" class="form-control" id="image" name="image" placeholder="Foto KK...">
                             @if ($type === 'Update' && $balita->image !== null && $balita->image !== '')
                             <img id="previewImage" src="{{ asset('uploads/balita/' . $balita->image) }}" style="width:200px;"class="rounded float-left" alt="">
