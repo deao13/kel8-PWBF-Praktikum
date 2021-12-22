@@ -13,7 +13,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">{{ $type }}</h6>
                 </div>
                 <div class="card-body">
-                    <form action="{{ $url }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ $url }}" method="POST" enctype="multipart/form-data"> //enctype untuk upload file
                         @csrf
                         @if ($type === 'Update')
                             @method('PATCH')
@@ -118,7 +118,7 @@
                         </div>
                         <div class="form-group">
                             <label for="image" class="form-label"><b>Foto KK</b></label>
-                            <input type="file" style="padding: 3px;width: 30%;" class="form-control" id="image" name="image" placeholder="Gambar balita...">
+                            <input type="file" style="padding: 3px;width: 30%;" class="form-control" id="image" name="image" placeholder="Foto KK...">
                             @if ($type === 'Update' && $balita->image !== null && $balita->image !== '')
                             <img id="previewImage" src="{{ asset('uploads/balita/' . $balita->image) }}" style="width:200px;"class="rounded float-left" alt="">
                             @else

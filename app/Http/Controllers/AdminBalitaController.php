@@ -74,7 +74,7 @@ class AdminBalitaController extends Controller
                 // get filename with extension
                 $fileImageExt = $request->file('image')->getClientOriginalName();
                 // get just filename
-                $filename = pathinfo($fileImageExt, PATHINFO_FILENAME);
+                $filename = pathinfo($fileImageExt, PATHINFO_FILENAME); //pathinfo() returns information about file path
                 // get just ext
                 $extension = $request->file('image')->getClientOriginalExtension();
                 // filename to store
@@ -177,7 +177,7 @@ class AdminBalitaController extends Controller
                 $path = $request->file('image')->storeAs('balita', $fileImage, 'public_uploads');
                 // delete file
                 if ($path && $balita->image !== 'noimage.jpg' && $balita->image !== null && $balita->image !== '') {
-                    Storage::disk('public_uploads')->delete('balita/'.$balita->image);
+                    Storage::disk('public_uploads')->delete('balita/'.$balita->image); // hapus file yg sebelumnya
                 }
             } else {
                 if ($balita->image === null || $balita->image === '') {

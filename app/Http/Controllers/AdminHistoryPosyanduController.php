@@ -177,7 +177,7 @@ class AdminHistoryPosyanduController extends Controller
                 $path = $request->file('image')->storeAs('history', $fileImage, 'public_uploads');
                 // delete file
                 if ($path && $history->image !== 'noimage.jpg' && $history->image !== null && $history->image !== '') {
-                    torage::disk('public_uploads')->delete('history/'.$history->image);
+                    storage::disk('public_uploads')->delete('history/'.$history->image);
                 }
             } else {
                 if ($history->image === null || $history->image === '') {
