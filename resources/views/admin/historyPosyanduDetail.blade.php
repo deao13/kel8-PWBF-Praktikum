@@ -64,7 +64,7 @@
                         </div>
                         <div class="form-group">
                             <label for="image" class="form-label"><b>Foto Balita</b></label>
-                            <input type="file" style="padding: 3px;width: 30%;" class="form-control" id="image" name="image" placeholder="Foto...">
+                            <input type="file" style="padding: 3px;width: 30%;" class="form-control" id="image" name="image" placeholder="Foto Balita...">
                             @if ($type === 'Update' && $history->image !== null && $history->image !== '')
                             <img id="previewImage" src="{{ asset('uploads/history/' . $history->image) }}" style="width:200px;"class="rounded float-left" alt="">
                             @else
